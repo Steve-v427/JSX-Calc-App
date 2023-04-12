@@ -1,0 +1,146 @@
+.App {
+  text-align: center;
+  align-items: center;
+  background-color: #2e86c0;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.calculator {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+}
+
+.display {
+  width: 100%;
+  font-size: 5rem;
+  height: 100px;
+  border: none;
+  background-color: #252525;
+  color: #fff;
+  text-align: right;
+  /* padding-right: 10px;
+  padding-left: 10px; */
+}
+
+/* Apply some basic styling to the calculator screen */
+.calculator-screen {
+  width: 100%;
+  font-size: 5rem;
+  height: 80px;
+  border: none;
+  background-color: #252525;
+  color: #fff;
+  text-align: right;
+  padding-right: 20px;
+  padding-left: 10px;
+}
+
+/* Apply some styling to the buttons */
+button {
+  height: 80px;
+  background-color: #fff;
+  border-radius: 3px;
+  border: 1px solid #c4c4c4;
+  background-color: transparent;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #333;
+  background-image: linear-gradient(
+    to bottom,
+    transparent,
+    transparent 50%,
+    rgba(0, 0, 0, 0.04)
+  );
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.45),
+    inset 0 -1px 0 0 rgba(255, 255, 255, 0.15),
+    0 1px 0 0 rgba(255, 255, 255, 0.15);
+  text-shadow: 0 1px rgba(255, 255, 255, 0.4);
+}
+
+button:hover {
+  background-color: #eaeaea;
+}
+
+.operator {
+  color: #337cac;
+}
+
+.all-clear {
+  background-color: #f0595f;
+  border-color: #b0353a;
+  color: #fff;
+}
+
+.all-clearbtn {
+  width: 100%;
+}
+
+.all-clearbtn:hover {
+  background-color: #f17377;
+}
+
+.equal-sign {
+  background-color: #2e86c0;
+  border-color: #337cac;
+  grid-row-start: 2;
+  grid-row-end: 6;
+  height: 100%; /*To make is span four rows*/
+  grid-column-start: 4;
+  grid-column-end: 5;
+}
+
+.equal-button {
+  height: 100%;
+  width: 100%;
+}
+.equal-button:hover {
+  background-color: #61dafb;
+}
+
+/* Programming tip: combine grid-row: and grid-column: properties by 
+using grid-area: 2 / 4 / 6 / 5  (grid-row-start / grid-column-start / grid-row-end / grid-column-end)*/
+
+/* Arrange the positioning and layout of buttons using CSS GRID  */
+.calculator-keys {
+  /* set up the grid and see temp output*/
+  display: grid;
+  /* set columns for the grid */
+  grid-template-columns: repeat(
+    4,
+    1fr
+  ); /*defined 4 cols with each taking 1 part of the available space of the grid width*/
+
+  /* Put some spacing between the buttons */
+  grid-gap: 20px;
+  padding: 20px;
+}
